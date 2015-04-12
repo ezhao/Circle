@@ -86,12 +86,16 @@ public class CircleDrawingView extends View {
         int totalArea = 0;
         Point point, nextPoint;
         int x, nextX, y, nextY;
-        for (int i = 0; i < points.size()-1; i++) {
+        for (int i = 0; i < points.size(); i++) {
             point = points.get(i);
             x = point.x;
             y = point.y;
 
-            nextPoint = points.get(i+1);
+            if (i == points.size() - 1) {
+                nextPoint = points.get(0);
+            } else {
+                nextPoint = points.get(i+1);
+            }
             nextX = nextPoint.x;
             nextY = nextPoint.y;
 
